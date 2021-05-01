@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap";
+
+.counter{
+    display: flex; 
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    height: 100vh;
+
+    .counter-conteiner-screen{
+    text-align: center; 
+    text-transform: uppercase; 
+    height: 128px;
+    }
+
+    .positive{
+        color: green
+    }
+    .negative{
+        color: red; 
+    }
+    .counter-conteiner-option{
+    .col{
+        text-align: center;
+    }  
+    }
+}
+
+

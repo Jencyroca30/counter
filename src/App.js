@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'; 
+import {Container, Row, Col, Button} from 'react-bootstrap';
+import './App.scss';
 
 function App() {
+
+  const[count, setCount]=useState(0);
+  const[positive, SetPositive]=useState(true); 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className='counter'>
+    <Container >
+      <Row className='counter-conteiner-screen'>
+        <Col>Counter:<span className={positive ? 'positive': 'negative'}>{count>-1? count : count*-1}</span></Col>
+      </Row>
+      <Row className='counter-conteiner-option'>
+        <Col><Button onClick={()=>{
+          setCount(count+1)
+          if(!positive && count>-1){
+            SetPositive(true)
+          }
+        }}>Increment</Button></Col>
+        <Col><Button onClick={()=>{
+          setCount(count-1)
+          if(positive && count===0){
+            SetPositive(false)
+          }
+        }}>Decrement</Button></Col> 
+      </Row>
+      </Container>
     </div>
+   
   );
 }
 
